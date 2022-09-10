@@ -12,11 +12,11 @@ namespace Jcd.Primitives;
 public static class PrimitiveTypes
 {
     /// <summary>
-    /// Returns the full set of CLR verifiable numeric types and boolean.
+    /// Returns the full set of CLR verifiably safe numeric types and boolean.
     /// (i.e. nint and nuint cannot be included as certain operations
     /// such as sizeof() are not supported outside of an unsafe context)
     /// </summary>
-    public static readonly IReadOnlyList<Type> NumericTypesAndBoolean =new []
+    public static readonly IReadOnlyList<Type> NumericTypes = new []
     {
         typeof(bool),
         typeof(byte),
@@ -35,11 +35,11 @@ public static class PrimitiveTypes
     /// <summary>
     /// Gets the cross product of all values in NumericTypesAndBoolean as <c>TypePairing</c> instances.
     /// </summary>
-    public static readonly IReadOnlyList<TypePairing> CrossProductOfAllNumericTypesAndBoolean =
-        NumericTypesAndBoolean
+    public static readonly IReadOnlyList<TypePairing> CrossProductOfNumericTypes =
+        NumericTypes
             .SelectMany(
-                // ReSharper disable once UnusedParameter.Local
-                 t1 => NumericTypesAndBoolean, 
+                 // ReSharper disable once UnusedParameter.Local
+                 t1 => NumericTypes,
                 (t1, t2) => new TypePairing(t1, t2)
             )
         .ToArray();

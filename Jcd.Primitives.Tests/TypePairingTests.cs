@@ -66,10 +66,10 @@ public class TypePairingTests
     }
     
     public static IEnumerable<object> AllPairings =>
-        PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean
+        PrimitiveTypes.CrossProductOfNumericTypes
             .Select(tp => new object[] { tp, string.Format(TypePairing.FormatString, tp.First.Name, tp.Second.Name) });
 
     public static IEnumerable<object[]> AreSameTypeData =>
-        PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean
+        PrimitiveTypes.CrossProductOfNumericTypes
             .Select(tp => new object[] { tp, tp.First == tp.Second });
 }

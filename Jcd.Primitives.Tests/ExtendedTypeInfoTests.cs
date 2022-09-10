@@ -25,10 +25,10 @@ public class ExtendedTypeInfoTests
     }
     
     public static IEnumerable<object[]> NumericDataTypes =>
-        PrimitiveTypes.NumericTypesAndBoolean.Select( t=> new object[] { t } );
+        PrimitiveTypes.NumericTypes.Select( t=> new object[] { t } );
     
     public static IEnumerable<object[]> EqualsData =>
-        PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean.Select(
+        PrimitiveTypes.CrossProductOfNumericTypes.Select(
             tp=> new object[]
             {
                 tp.First.GetExtendedTypeInfo(),

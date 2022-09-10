@@ -51,7 +51,7 @@ public class TypeExtensionsTests
         get
         {
             yield return new object[] { typeof(object), GetSize(typeof(object)) };
-            var numerics = PrimitiveTypes.NumericTypesAndBoolean.Select(
+            var numerics = PrimitiveTypes.NumericTypes.Select(
                 t => new object[] { t, GetSize(t) }
             );
             foreach(var result in numerics) yield return result;
@@ -76,7 +76,7 @@ public class TypeExtensionsTests
     }
     
     public static IEnumerable<object[]> IsSignedData =>
-        PrimitiveTypes.NumericTypesAndBoolean.Select(
+        PrimitiveTypes.NumericTypes.Select(
             t=> new object[]
             {
                 t,
@@ -91,7 +91,7 @@ public class TypeExtensionsTests
         );
 
     public static IEnumerable<object[]> IsFloatingPointData =>
-        PrimitiveTypes.NumericTypesAndBoolean.Select(
+        PrimitiveTypes.NumericTypes.Select(
             t=> new object[]
             {
                 t,
@@ -100,7 +100,7 @@ public class TypeExtensionsTests
         );
     
     public static IEnumerable<object[]> IsUserDefinedStructOrEnumData =>
-        PrimitiveTypes.NumericTypesAndBoolean.Select(
+        PrimitiveTypes.NumericTypes.Select(
             t=> new object[]
             {
                 t,
@@ -109,7 +109,7 @@ public class TypeExtensionsTests
         );
     
     public static IEnumerable<object[]> IsPrimitiveStructOrEnumData =>
-        PrimitiveTypes.NumericTypesAndBoolean.Select(
+        PrimitiveTypes.NumericTypes.Select(
             t=> new object[]
             {
                 t,
@@ -118,7 +118,7 @@ public class TypeExtensionsTests
         );
     
     public static IEnumerable<object[]> NumericDataTypes =>
-        PrimitiveTypes.NumericTypesAndBoolean.Select(
+        PrimitiveTypes.NumericTypes.Select(
             t=> new object[]
             {
                 t

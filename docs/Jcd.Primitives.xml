@@ -143,14 +143,14 @@
             properties for primitive numeric types and boolean.
             </summary>
         </member>
-        <member name="F:Jcd.Primitives.PrimitiveTypes.NumericTypesAndBoolean">
+        <member name="F:Jcd.Primitives.PrimitiveTypes.NumericTypes">
             <summary>
-            Returns the full set of CLR verifiable numeric types and boolean.
+            Returns the full set of CLR verifiably safe numeric types and boolean.
             (i.e. nint and nuint cannot be included as certain operations
             such as sizeof() are not supported outside of an unsafe context)
             </summary>
         </member>
-        <member name="F:Jcd.Primitives.PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean">
+        <member name="F:Jcd.Primitives.PrimitiveTypes.CrossProductOfNumericTypes">
             <summary>
             Gets the cross product of all values in NumericTypesAndBoolean as <c>TypePairing</c> instances.
             </summary>

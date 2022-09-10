@@ -14,5 +14,5 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 | Fields | |
 | :--- | :--- |
-| [CrossProductOfAllNumericTypesAndBoolean](Jcd.Primitives.PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean.md 'Jcd.Primitives.PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean') | Gets the cross product of all values in NumericTypesAndBoolean as `TypePairing` instances. |
-| [NumericTypesAndBoolean](Jcd.Primitives.PrimitiveTypes.NumericTypesAndBoolean.md 'Jcd.Primitives.PrimitiveTypes.NumericTypesAndBoolean') | Returns the full set of CLR verifiable numeric types and boolean.<br/>(i.e. nint and nuint cannot be included as certain operations<br/>such as sizeof() are not supported outside of an unsafe context) |
+| [CrossProductOfNumericTypes](Jcd.Primitives.PrimitiveTypes.CrossProductOfNumericTypes.md 'Jcd.Primitives.PrimitiveTypes.CrossProductOfNumericTypes') | Gets the cross product of all values in NumericTypesAndBoolean as `TypePairing` instances. |
+| [NumericTypes](Jcd.Primitives.PrimitiveTypes.NumericTypes.md 'Jcd.Primitives.PrimitiveTypes.NumericTypes') | Returns the full set of CLR verifiably safe numeric types and boolean.<br/>(i.e. nint and nuint cannot be included as certain operations<br/>such as sizeof() are not supported outside of an unsafe context) |

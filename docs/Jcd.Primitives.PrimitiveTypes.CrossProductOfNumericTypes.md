@@ -1,12 +1,12 @@
 #### [Jcd.Primitives](index.md 'index')
 ### [Jcd.Primitives](Jcd.Primitives.md 'Jcd.Primitives').[PrimitiveTypes](Jcd.Primitives.PrimitiveTypes.md 'Jcd.Primitives.PrimitiveTypes')
 
-## PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean Field
+## PrimitiveTypes.CrossProductOfNumericTypes Field
 
 Gets the cross product of all values in NumericTypesAndBoolean as `TypePairing` instances.
 
 ```csharp
-public static readonly IReadOnlyList<TypePairing> CrossProductOfAllNumericTypesAndBoolean;
+public static readonly IReadOnlyList<TypePairing> CrossProductOfNumericTypes;
 ```
 
 #### Field Value
