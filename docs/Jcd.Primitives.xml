@@ -4,15 +4,256 @@
         <name>Jcd.Primitives</name>
     </assembly>
     <members>
-        <member name="T:Jcd.Primitives.Class1">
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
             <summary>
-            TODO: Add some documentation as you write your code.
+                Reserved to be used by the compiler for tracking metadata.
+                This class should not be used by developers in source code.
             </summary>
+            <remarks>
+                This definition is provided by the <i>IsExternalInit</i> NuGet package (https://www.nuget.org/packages/IsExternalInit).
+                Please see https://github.com/manuelroemer/IsExternalInit for more information.
+            </remarks>
+        </member>
+        <member name="T:Jcd.Primitives.ExtendedTypeInfo">
+            <summary>
+            Contains some additional, sometimes sought after metadata about types.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.ExtendedTypeInfo.IsSigned">
+            <summary>
+            Indicates if the type is signed.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.ExtendedTypeInfo.IsFloatingPoint">
+            <summary>
+            Indicates if the type is float,double, or decimal.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.ExtendedTypeInfo.Size">
+            <summary>
+            The size of the type in bytes.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.ExtendedTypeInfo.Type">
+            <summary>
+            The core type.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.ExtendedTypeInfo.IsPrimitiveStructOrEnum">
+            <summary>
+            Indicates if a type is a primitive struct or primitive enum.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.ExtendedTypeInfo.IsUserDefinedStructOrEnum">
+            <summary>
+            Indicates if a type is a user defined struct or user defined enum.
+            </summary>
+        </member>
+        <member name="M:Jcd.Primitives.ExtendedTypeInfo.#ctor(System.Type)">
+            <summary>
+            Constructs a new ExtendedTypeInfo instance from an existing type. 
+            </summary>
+            <param name="type">the type to inspect</param>
+        </member>
+        <member name="T:Jcd.Primitives.IDisjointComparer`2">
+            <summary>
+            Defines methods to support the comparison of two items of differing
+            types, which don't support IEquatable&lt;T1&gt; AND IEquatable&lt;T2&gt;
+            <remarks>
+            An inability to implement IEquatable&lt;T1&gt; AND IEquatable&lt;T2&gt;
+            on the same containing type is actually pretty common as
+            the "may unify..." compiler error message happens when the compiler
+            thinks there's a slight hint of a chance that T1 and T2 COULD become
+            the same data type.
+            
+            Of course for IEquatable, and IComparable that's often perfectly
+            fine, not necessarily true of other operations tho.
+            </remarks>
+            </summary>
+            <typeparam name="T1">The first data type.</typeparam>
+            <typeparam name="T2">The second data type.</typeparam>
+        </member>
+        <member name="M:Jcd.Primitives.IDisjointComparer`2.Compare(`0,`1)">
+            <summary>
+            Compares an instance of T1 to an instance of T2.
+            </summary>
+            <param name="x">The first item to compare</param>
+            <param name="y">The second item to compare</param>
+            <returns>
+            *  0 when x == y
+            * -1 when x lt; y
+            *  1 when x gt; y
+            </returns>
+        </member>
+        <member name="M:Jcd.Primitives.IDisjointComparer`2.Compare(`1,`0)">
+            <summary>
+            Compares an instance of T1 to an instance of T2.
+            </summary>
+            <param name="x">The first item to compare</param>
+            <param name="y">The second item to compare</param>
+            <returns>
+            *  0 when x == y
+            * -1 when x lt; y
+            *  1 when x gt; y
+            </returns>
+        </member>
+        <member name="T:Jcd.Primitives.IDisjointEqualityComparer`2">
+            <summary>
+            Defines methods to support the comparison of two items of differing
+            types for equality, which don't support IEquatable&lt;T1&gt; AND
+            IEquatable&lt;T2&gt;
+            <remarks>
+            An inability to implement IEquatable&lt;T1&gt; AND IEquatable&lt;T2&gt;
+            on the same containing type is actually pretty common as
+            the "may unify..." compiler error message happens when the compiler
+            thinks there's a slight hint of a chance that T1 and T2 COULD become
+            the same data type.
+            
+            Of course for IEquatable, and IComparable that's often perfectly
+            fine, not necessarily true of other operations tho.
+            </remarks>
+            </summary>
+            <typeparam name="T1">The first data type.</typeparam>
+            <typeparam name="T2">The second data type.</typeparam>
+        </member>
+        <member name="M:Jcd.Primitives.IDisjointEqualityComparer`2.Equals(`0,`1)">
+            <summary>
+            Compares an instance of T1 to an instance of T2.
+            </summary>
+            <param name="x">The first item to compare</param>
+            <param name="y">The second item to compare</param>
+            <returns>True if equivalent.</returns>
+        </member>
+        <member name="M:Jcd.Primitives.IDisjointEqualityComparer`2.Equals(`1,`0)">
+            <summary>
+            Compares an instance of T1 to an instance of T2.
+            </summary>
+            <param name="x">The first item to compare</param>
+            <param name="y">The second item to compare</param>
+            <returns>True if equivalent.</returns>
         </member>
         <member name="T:Jcd.Primitives.NamespaceDoc">
             <summary>
             Provides TODO: A description of what this namespace provides.
             </summary>
+        </member>
+        <member name="T:Jcd.Primitives.PrimitiveTypes">
+            <summary>
+            A helper class that provides some niche use case
+            properties for primitive numeric types and boolean.
+            </summary>
+        </member>
+        <member name="F:Jcd.Primitives.PrimitiveTypes.NumericTypesAndBoolean">
+            <summary>
+            Returns the full set of CLR verifiable numeric types and boolean.
+            (i.e. nint and nuint cannot be included as certain operations
+            such as sizeof() are not supported outside of an unsafe context)
+            </summary>
+        </member>
+        <member name="F:Jcd.Primitives.PrimitiveTypes.CrossProductOfAllNumericTypesAndBoolean">
+            <summary>
+            Gets the cross product of all values in NumericTypesAndBoolean as <c>TypePairing</c> instances.
+            </summary>
+        </member>
+        <member name="T:Jcd.Primitives.TypeExtensions">
+            <summary>
+            A set of extension methods for Type that people seem to keep asking
+            about/for on StackOverflow. 
+            </summary>
+        </member>
+        <member name="M:Jcd.Primitives.TypeExtensions.IsUserDefinedStructOrEnum(System.Type)">
+            <summary>
+            Determines if a type is a user defined struct
+            or user defined enum.
+            </summary>
+            <param name="type">the type to inspect</param>
+            <returns>true if the type is a used defined struct or enum.</returns>
+        </member>
+        <member name="M:Jcd.Primitives.TypeExtensions.IsPrimitiveStructOrEnum(System.Type)">
+            <summary>
+            Determines if a type is a a primitive struct or primitive (built-in) enum
+            </summary>
+            <param name="type">the type to inspect.</param>
+            <returns>True if the type is a primitive struct or enum.</returns>
+        </member>
+        <member name="M:Jcd.Primitives.TypeExtensions.SizeOf(System.Type)">
+            <summary>
+            Retrieves the sizeof(T) for a given primitive type (not enums). 
+            </summary>
+            <param name="type">The primitive type to inspect</param>
+            <returns>the result of sizeof(T) for primitive types. -1 for non-primitive types and enums.</returns>
+        </member>
+        <member name="M:Jcd.Primitives.TypeExtensions.IsSigned(System.Type)">
+            <summary>
+            Determines if a value of the provided type can be negative. (i.e. is it signed)
+            </summary>
+            <param name="type">The type to inspect</param>
+            <returns>True if it's a signed type.</returns>
+        </member>
+        <member name="M:Jcd.Primitives.TypeExtensions.IsFloatingPoint(System.Type)">
+            <summary>
+            Determines if the provided type is a floating point/decimal type.
+            </summary>
+            <param name="type">the type to inspect</param>
+            <returns>True if float,double or decimal. False otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Primitives.TypeExtensions.GetExtendedTypeInfo(System.Type)">
+            <summary>
+            Retrieves the extended type information for the provided type. 
+            </summary>
+            <param name="type">The type to act upon.</param>
+            <returns>The extended type information.</returns>
+        </member>
+        <member name="T:Jcd.Primitives.TypePairing">
+             <summary>
+             Represents a unique pairing of two types.
+             </summary>
+             <remarks>A pairing is considered identical for x and y if:
+                  x.First==y.First &amp;&amp; x.Second==y.Second
+             -- OR --
+                  x.First==y.Second &amp;&amp; x.Second==y.First
+            
+             To help with other operations, the hashcode is computed such that it's the same for any T1 and T2
+             regardless if T1 or T2 are first or second.
+             </remarks>
+        </member>
+        <member name="P:Jcd.Primitives.TypePairing.First">
+            <summary>
+             The first type in the pairing.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.TypePairing.Second">
+            <summary>
+            The second type in the pairing.
+            </summary>
+        </member>
+        <member name="P:Jcd.Primitives.TypePairing.AreSameType">
+            <summary>
+            Indicates if the pairing is an identity pairing. 
+            </summary>
+        </member>
+        <member name="M:Jcd.Primitives.TypePairing.#ctor(System.Type,System.Type)">
+            <summary>
+            Constructs an instance of TypePairing from two instances of Type.
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+        </member>
+        <member name="M:Jcd.Primitives.TypePairing.Equals(Jcd.Primitives.TypePairing)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Primitives.TypePairing.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="F:Jcd.Primitives.TypePairing.FormatString">
+            <summary>
+            The format string for a TypePairing.
+            * {0} is the type name of First.
+            * {1} is the type name of Second.
+            </summary>
+        </member>
+        <member name="M:Jcd.Primitives.TypePairing.ToString">
+            <inheritdoc />
         </member>
     </members>
 </doc>

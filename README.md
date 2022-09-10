@@ -1,6 +1,7 @@
 # Jcd.Primitives
 
-A *.NET Standard 2.0* library that provides **a description of what features/classes/services the library provides goes here.**
+A *.NET Standard 2.0* library that provides some utility classes and methods surrounding 
+.Net primitive data types, comparisons...etc.
 
 ## Before you begin coding
 
