@@ -3,7 +3,7 @@
 
 ## TypeExtensions.IsFloatingPoint(this Type) Method
 
-Determines if the provided type is a floating point/decimal type.
+Determines if the provided type is a floating point or decimal type.
 
 ```csharp
 public static bool IsFloatingPoint(this System.Type type);

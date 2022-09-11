@@ -70,7 +70,7 @@ public static class TypeExtensions
     }
 
     /// <summary>
-    /// Determines if the provided type is a floating point/decimal type.
+    /// Determines if the provided type is a floating point or decimal type.
     /// </summary>
     /// <param name="type">the type to inspect</param>
     /// <returns>True if float,double or decimal. False otherwise.</returns>

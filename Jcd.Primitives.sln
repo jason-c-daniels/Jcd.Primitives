@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jcd.Primitives.Tests", "Jcd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jcd.Primitives.Examples", "Jcd.Primitives.Examples\Jcd.Primitives.Examples.csproj", "{74FE0B09-97AE-4AD7-83E2-95F0FBF937BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynthesizeComparers", "SynthesizeComparers\SynthesizeComparers.csproj", "{32613F1B-7634-489D-94FF-D156B2ED7081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{74FE0B09-97AE-4AD7-83E2-95F0FBF937BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74FE0B09-97AE-4AD7-83E2-95F0FBF937BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74FE0B09-97AE-4AD7-83E2-95F0FBF937BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32613F1B-7634-489D-94FF-D156B2ED7081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32613F1B-7634-489D-94FF-D156B2ED7081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32613F1B-7634-489D-94FF-D156B2ED7081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32613F1B-7634-489D-94FF-D156B2ED7081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

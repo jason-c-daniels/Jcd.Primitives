@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CompareUpcastBoth" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Compares a $firstType$ to a $secondType$
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($firstType$ x, $secondType$ y)
+    {
+         var x1=($upcastType$)x;
+         var y1=($upcastType$)y;
+         return x1.CompareTo(y1);
+    }
+
+    /// &lt;summary&gt;
+    /// Compares a $secondType$ to a $firstType$ 
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($secondType$ x, $firstType$ y)
+    {
+         var x1=($upcastType$)x;
+         var y1=($upcastType$)y;
+         return x1.CompareTo(y1);
+    }</value>
+    </data>
+    <data name="EqualsBooleanToNonboolean" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Checks a Boolean and a $nonbooleanType$ for equality
+    /// Zero converts to false and non-zero to true.
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals(Boolean x, $nonbooleanType$ y)
+    {
+         var y1 = y != 0;
+         return x == y1;
+    }
+
+    /// &lt;summary&gt;
+    /// Checks a $nonbooleanType$ and a Boolean for equality
+    /// Zero converts to false and non-zero to true.
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($nonbooleanType$ x, Boolean y)
+    {
+         var x1 = x != 0;
+         return x1 == y;
+    }</value>
+    </data>
+    <data name="EqualsUpcastBoth" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Checks a $firstType$ and a $secondType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($firstType$ x, $secondType$ y)
+    {
+         var y1=($firstType$)y;
+         return x.Equals(y1);
+    }
+
+    /// &lt;summary&gt;
+    /// Checks a $secondType$ and a $firstType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($secondType$ x, $firstType$ y)
+    {
+         var x1=($firstType$)x;
+         return x1.Equals(y);
+    }
+</value>
+    </data>
+    <data name="EqualsSameSizeUnsignedToSigned" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Checks a $signedType$ and a $unsignedType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($signedType$ x, $unsignedType$ y)
+    {
+        if ( x &lt; 0 || y &gt; $signedType$.MaxValue) return false;
+        return (($unsignedType$)x).Equals(y);
+    }
+
+    /// &lt;summary&gt;
+    /// Checks a $unsignedType$ and a $signedType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($unsignedType$ x, $signedType$ y)
+    {
+        if ( y &lt; 0 || x &gt; $signedType$.MaxValue) return false;
+        return x.Equals(($unsignedType$)y);
+    }
+</value>
+    </data>
+    <data name="CompareSameSizeUnsignedToSigned" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Compares a $signedType$ to a $unsignedType$
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($signedType$ x, $unsignedType$ y)
+    {
+        if (x &lt; 0) return -1;
+        if (y &gt; $signedType$.MaxValue) return -1;
+        return (($unsignedType$)x).CompareTo(y);
+    }
+
+    /// &lt;summary&gt;
+    /// Compares a $unsignedType$ to a $signedType$ 
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($unsignedType$ x, $signedType$ y)
+    {
+        if (y &lt; 0) return 1;
+        if (x &gt; $signedType$.MaxValue) return 1;
+        return x.CompareTo(($unsignedType$)y);
+    }
+</value>
+    </data>
+    <data name="EqualsUpcastToLarger" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Checks a $largerType$ and a $smallerType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($largerType$ x, $smallerType$ y)
+    {
+         return x == y;
+    }
+
+    /// &lt;summary&gt;
+    /// Checks a $smallerType$ and a $largerType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($smallerType$ x, $largerType$ y)
+    {
+         return x == y;
+    }
+</value>
+    </data>
+    <data name="CompareUpcastToLarger" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Compares a $largerType$ to a $smallerType$
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($largerType$ x, $smallerType$ y)
+    {
+         return x.CompareTo(y);
+    }
+
+    /// &lt;summary&gt;
+    /// Compares a $smallerType$ to a $largerType$ 
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($smallerType$ x, $largerType$ y)
+    {
+         return y.CompareTo(x)*-1; // invert the result as x is on the left.
+    }
+</value>
+    </data>
+    <data name="EqualsSmallerSignedToLargerUnsigned" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Checks a $signedType$ and a $unsignedType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($signedType$ x, $unsignedType$ y)
+    {
+		if (x &lt; 0 || y &gt; ($unsignedType$)$signedType$.MaxValue) return false;
+		return (($unsignedType$)x) == y;
+    }
+
+    /// &lt;summary&gt;
+    /// Checks a $unsignedType$ and a $signedType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($unsignedType$ x, $signedType$ y)
+    {
+		if (y &lt; 0 || x &gt; ($unsignedType$)$signedType$.MaxValue) return false;
+		return x == ($unsignedType$)y;
+    }
+</value>
+    </data>
+    <data name="EqualsSmallerUnsignedToLargerSigned" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Checks a $signedType$ and a $unsignedType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($signedType$ x, $unsignedType$ y)
+    {
+		if (x &lt; 0) return false;
+		return x == y;
+    }
+
+    /// &lt;summary&gt;
+    /// Checks a $unsignedType$ and a $signedType$ for equality
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  true when x == y
+    /// *  false otherwise
+    /// &lt;/returns&gt;
+    public static bool Equals($unsignedType$ x, $signedType$ y)
+    {
+		if (y &lt; 0) return false;
+		return x == y;
+    }
+</value>
+    </data>
+    <data name="CompareSmallerSignedToLargerUnsigned" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Compares a $signedType$ to a $unsignedType$
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($signedType$ x, $unsignedType$ y)
+    {
+		if (x &lt; 0) return -1;
+		if (y &gt; ($unsignedType$)$signedType$.MaxValue) return -1;
+		return (($unsignedType$)x).CompareTo(y);
+    }
+
+    /// &lt;summary&gt;
+    /// Compares a $unsignedType$ to a $signedType$ 
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($unsignedType$ x, $signedType$ y)
+    {
+		if (y &lt; 0) return 1;
+		if (x &gt; ($unsignedType$)$signedType$.MaxValue) return 1;
+		return x.CompareTo(($unsignedType$)y);
+    }</value>
+    </data>
+    <data name="CompareSmallerUnsignedToLargerSigned" xml:space="preserve">
+        <value>    /// &lt;summary&gt;
+    /// Compares a $signedType$ to a $unsignedType$
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($signedType$ x, $unsignedType$ y)
+    {
+		return x &lt; 0 ? -1 : x.CompareTo(y);
+    }
+
+    /// &lt;summary&gt;
+    /// Compares a $unsignedType$ to a $signedType$ 
+    /// &lt;/summary&gt;
+    /// &lt;param name="x"&gt;The first item to compare&lt;/param&gt;
+    /// &lt;param name="y"&gt;The second item to compare&lt;/param&gt;
+    /// &lt;returns&gt;
+    /// *  0 when x == y
+    /// * -1 when x lt; y
+    /// *  1 when x gt; y
+    /// &lt;/returns&gt;
+    public static int Compare($unsignedType$ x, $signedType$ y)
+    {
+		return y &lt; 0 ? 1 : (($signedType$)x).CompareTo(y);
+    }</value>
+    </data>
+</root>
