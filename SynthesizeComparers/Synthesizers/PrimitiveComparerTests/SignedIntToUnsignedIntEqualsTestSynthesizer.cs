@@ -11,7 +11,7 @@ public class SignedIntToUnsignedIntEqualsTestSynthesizer : SignedIntToUnsignedIn
     public override SynthesizerType SynthesizerType => SynthesizerType.EqualsTest;
    
     /// <inheritdoc />
-    public  override string Synthesize(TypePairing typePairing)
+    public override string Synthesize(TypePairing typePairing)
     {
         // TODO: create and select appropriate unit test body templates
         if (!CanSynthesize(typePairing)) return string.Empty;

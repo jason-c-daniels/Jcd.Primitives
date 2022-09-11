@@ -11,7 +11,7 @@ public class SameSignedCompareSynthesizer : SameSignedBaseSynthesizer
     public override SynthesizerType SynthesizerType => SynthesizerType.CompareImplementation;
     
     /// <inheritdoc />
-    public  override string Synthesize(TypePairing typePairing)
+    public override string Synthesize(TypePairing typePairing)
     {
         if (!CanSynthesize(typePairing)) return string.Empty;
         var (smallerType, largerType) = GetSmallerAndLargerType(typePairing);

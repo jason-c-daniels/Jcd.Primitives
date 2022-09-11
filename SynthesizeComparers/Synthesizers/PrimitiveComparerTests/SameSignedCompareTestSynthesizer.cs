@@ -11,7 +11,7 @@ public class SameSignedCompareTestSynthesizer : SameSignedBaseSynthesizer
     public override SynthesizerType SynthesizerType => SynthesizerType.CompareTest;
     
     /// <inheritdoc />
-    public  override string Synthesize(TypePairing typePairing)
+    public override string Synthesize(TypePairing typePairing)
     {
         // TODO: create and select appropriate unit test body templates
         if (!CanSynthesize(typePairing)) return string.Empty;

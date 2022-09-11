@@ -11,7 +11,7 @@ public class SignedIntToUnsignedIntCompareSynthesizer : SignedIntToUnsignedIntBa
     public override SynthesizerType SynthesizerType => SynthesizerType.CompareImplementation;
     
     /// <inheritdoc />
-    public  override string Synthesize(TypePairing typePairing)
+    public override string Synthesize(TypePairing typePairing)
     {
         if (!CanSynthesize(typePairing)) return string.Empty;
         var (exti1, exti2) = GetExtendedTypeInfo(typePairing);
