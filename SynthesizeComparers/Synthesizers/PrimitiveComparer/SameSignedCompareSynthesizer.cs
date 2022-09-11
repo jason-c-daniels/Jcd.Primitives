@@ -1,24 +1,24 @@
 ﻿using Jcd.Primitives;
 using SynthesizeComparers.Resources;
 
-namespace SynthesizeComparers.Synthesizers.Implementation;
+namespace SynthesizeComparers.Synthesizers.PrimitiveComparer;
 
-public class SameSignedEqualsSynthesizer : SameSignedBaseSynthesizer
+public class SameSignedCompareSynthesizer : SameSignedBaseSynthesizer
 {
     #region Implementation of IComparisonMethodSynthesizer
     
     /// <inheritdoc />
-    public override SynthesizerType SynthesizerType => SynthesizerType.EqualsImplementation;
+    public override SynthesizerType SynthesizerType => SynthesizerType.CompareImplementation;
     
     /// <inheritdoc />
-    public override string Synthesize(TypePairing typePairing)
+    public  override string Synthesize(TypePairing typePairing)
     {
         if (!CanSynthesize(typePairing)) return string.Empty;
         var (smallerType, largerType) = GetSmallerAndLargerType(typePairing);
-        return PrimitiveComparerTemplates.EqualsUpcastToLarger
+        return PrimitiveComparerTemplates.CompareUpcastToLarger
             .Replace("$smallerType$", smallerType.Name)
             .Replace("$largerType$", largerType.Name);
     }
-    
+
     #endregion
 }

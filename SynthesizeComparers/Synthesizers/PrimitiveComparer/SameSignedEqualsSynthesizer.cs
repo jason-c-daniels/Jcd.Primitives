@@ -1,15 +1,15 @@
-using Jcd.Primitives;
+﻿using Jcd.Primitives;
 using SynthesizeComparers.Resources;
 
-namespace SynthesizeComparers.Synthesizers.Implementation;
+namespace SynthesizeComparers.Synthesizers.PrimitiveComparer;
 
-public class DecimalToNondecimalEqualsSynthesizer : DecimalToNondecimalBaseSynthesizer
+public class SameSignedEqualsSynthesizer : SameSignedBaseSynthesizer
 {
-    #region Overrides of ComparisonMethodSynthesizerBase
+    #region Implementation of IComparisonMethodSynthesizer
     
     /// <inheritdoc />
     public override SynthesizerType SynthesizerType => SynthesizerType.EqualsImplementation;
-
+    
     /// <inheritdoc />
     public override string Synthesize(TypePairing typePairing)
     {
@@ -19,6 +19,6 @@ public class DecimalToNondecimalEqualsSynthesizer : DecimalToNondecimalBaseSynth
             .Replace("$smallerType$", smallerType.Name)
             .Replace("$largerType$", largerType.Name);
     }
-
+    
     #endregion
 }

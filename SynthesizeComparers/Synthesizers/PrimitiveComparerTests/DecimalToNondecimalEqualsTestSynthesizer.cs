@@ -1,26 +1,24 @@
-using System.Diagnostics;
 using Jcd.Primitives;
 using SynthesizeComparers.Resources;
 
-namespace SynthesizeComparers.Synthesizers.Implementation;
+namespace SynthesizeComparers.Synthesizers.PrimitiveComparerTests;
 
-public class DecimalToNondecimalCompareSynthesizer : DecimalToNondecimalBaseSynthesizer
+public class DecimalToNondecimalEqualsTestSynthesizer : DecimalToNondecimalBaseSynthesizer
 {
     #region Overrides of ComparisonMethodSynthesizerBase
     
     /// <inheritdoc />
-    public override SynthesizerType SynthesizerType => SynthesizerType.CompareImplementation;
+    public override SynthesizerType SynthesizerType => SynthesizerType.EqualsTest;
 
     /// <inheritdoc />
     public override string Synthesize(TypePairing typePairing)
     {
+        // TODO: create and select appropriate unit test body templates
         if (!CanSynthesize(typePairing)) return string.Empty;
         var (smallerType, largerType) = GetSmallerAndLargerType(typePairing);
-        var result= PrimitiveComparerTemplates.CompareUpcastToLarger
+        return PrimitiveComparerTemplates.EqualsUpcastToLarger
             .Replace("$smallerType$", smallerType.Name)
             .Replace("$largerType$", largerType.Name);
-        Debug.WriteLine(result);
-        return result;
     }
 
     #endregion

@@ -1,18 +1,19 @@
 ﻿using Jcd.Primitives;
 using SynthesizeComparers.Resources;
 
-namespace SynthesizeComparers.Synthesizers.Implementation;
+namespace SynthesizeComparers.Synthesizers.PrimitiveComparerTests;
 
-public class NondecimalFloatingPointEqualsSynthesizer : NondecimalFloatingPointBaseSynthesizer
+public class NondecimalFloatingPointEqualsTestSynthesizer : NondecimalFloatingPointBaseSynthesizer
 {
     #region Overrides of ComparisonMethodSynthesizerBase
     
     /// <inheritdoc />
-    public override SynthesizerType SynthesizerType => SynthesizerType.EqualsImplementation;
+    public override SynthesizerType SynthesizerType => SynthesizerType.EqualsTest;
 
     /// <inheritdoc />
     public override string Synthesize(TypePairing typePairing)
     {
+        // TODO: create and select appropriate unit test body templates
         if (!CanSynthesize(typePairing)) return string.Empty;
         var (exti1, exti2) = GetExtendedTypeInfo(typePairing);
         // if double-float comparison, upcast to larger.

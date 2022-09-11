@@ -1,19 +1,18 @@
 using Jcd.Primitives;
 using SynthesizeComparers.Resources;
 
-namespace SynthesizeComparers.Synthesizers.Test;
+namespace SynthesizeComparers.Synthesizers.PrimitiveComparer;
 
-public class SignedIntToUnsignedIntEqualsTestSynthesizer : SignedIntToUnsignedIntBaseSynthesizer
+public class SignedIntToUnsignedIntEqualsSynthesizer : SignedIntToUnsignedIntBaseSynthesizer
 {
     #region Implementation of IComparisonMethodSynthesizer
-
+    
     /// <inheritdoc />
-    public override SynthesizerType SynthesizerType => SynthesizerType.EqualsTest;
-   
+    public override SynthesizerType SynthesizerType => SynthesizerType.EqualsImplementation;
+    
     /// <inheritdoc />
     public  override string Synthesize(TypePairing typePairing)
     {
-        // TODO: create and select appropriate unit test body templates
         if (!CanSynthesize(typePairing)) return string.Empty;
         var (exti1, exti2) = GetExtendedTypeInfo(typePairing);
         if (exti1.Size != exti2.Size)

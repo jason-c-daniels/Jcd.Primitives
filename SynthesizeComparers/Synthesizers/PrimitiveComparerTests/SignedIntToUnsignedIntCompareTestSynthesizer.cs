@@ -1,7 +1,7 @@
 using Jcd.Primitives;
 using SynthesizeComparers.Resources;
 
-namespace SynthesizeComparers.Synthesizers.Test;
+namespace SynthesizeComparers.Synthesizers.PrimitiveComparerTests;
 
 public class SignedIntToUnsignedIntCompareTestSynthesizer : SignedIntToUnsignedIntBaseSynthesizer
 {

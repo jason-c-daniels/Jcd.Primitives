@@ -1,5 +1,7 @@
 ﻿using Jcd.Primitives;
 using SynthesizeComparers.Synthesizers;
+using SynthesizeComparers.Synthesizers.PrimitiveComparer;
+using SynthesizeComparers.Synthesizers.PrimitiveComparerTests;
 
 namespace SynthesizeComparers.Synthesizers;
 
@@ -7,36 +9,36 @@ public static class Selector
 {
     public static IReadOnlyList<IComparisonMethodSynthesizer> EqualsImplementationSynthesizers = new IComparisonMethodSynthesizer[]
     {
-        new Implementation.BooleanToNonbooleanEqualsSynthesizer(),
-        new Implementation.SameSignedEqualsSynthesizer(),
-        new Implementation.SignedIntToUnsignedIntEqualsSynthesizer(),
-        new Implementation.NondecimalFloatingPointEqualsSynthesizer(),
-        new Implementation.DecimalToNondecimalEqualsSynthesizer()
+        new BooleanToNonbooleanEqualsSynthesizer(),
+        new SameSignedEqualsSynthesizer(),
+        new SignedIntToUnsignedIntEqualsSynthesizer(),
+        new NondecimalFloatingPointEqualsSynthesizer(),
+        new DecimalToNondecimalEqualsSynthesizer()
     };
     
     public static IReadOnlyList<IComparisonMethodSynthesizer> CompareImplementationSynthesizers = new IComparisonMethodSynthesizer[]
     {
-        new Implementation.SameSignedCompareSynthesizer(),
-        new Implementation.SignedIntToUnsignedIntCompareSynthesizer(),
-        new Implementation.NondecimalFloatingPointCompareSynthesizer(),
-        new Implementation.DecimalToNondecimalCompareSynthesizer()
+        new SameSignedCompareSynthesizer(),
+        new SignedIntToUnsignedIntCompareSynthesizer(),
+        new NondecimalFloatingPointCompareSynthesizer(),
+        new DecimalToNondecimalCompareSynthesizer()
     };
 
     public static IReadOnlyList<IComparisonMethodSynthesizer> EqualsTestSynthesizers = new IComparisonMethodSynthesizer[]
     {
-        new Test.BooleanToNonbooleanEqualsTestSynthesizer(),
-        new Test.SameSignedEqualsTestSynthesizer(),
-        new Test.SignedIntToUnsignedIntEqualsTestSynthesizer(),
-        new Test.NondecimalFloatingPointEqualsTestSynthesizer(),
-        new Test.DecimalToNondecimalEqualsTestSynthesizer()
+        new BooleanToNonbooleanEqualsTestSynthesizer(),
+        new SameSignedEqualsTestSynthesizer(),
+        new SignedIntToUnsignedIntEqualsTestSynthesizer(),
+        new NondecimalFloatingPointEqualsTestSynthesizer(),
+        new DecimalToNondecimalEqualsTestSynthesizer()
     };
     
     public static IReadOnlyList<IComparisonMethodSynthesizer> CompareTestSynthesizers = new IComparisonMethodSynthesizer[]
     {
-        new Test.SameSignedCompareTestSynthesizer(),
-        new Test.SignedIntToUnsignedIntCompareTestSynthesizer(),
-        new Test.NondecimalFloatingPointCompareTestSynthesizer(),
-        new Test.DecimalToNondecimalCompareTestSynthesizer()
+        new SameSignedCompareTestSynthesizer(),
+        new SignedIntToUnsignedIntCompareTestSynthesizer(),
+        new NondecimalFloatingPointCompareTestSynthesizer(),
+        new DecimalToNondecimalCompareTestSynthesizer()
     };
     
     

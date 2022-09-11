@@ -1,4 +1,5 @@
-﻿namespace SynthesizeComparers.Synthesizers;
+﻿// ReSharper disable MemberCanBePrivate.Global
+namespace SynthesizeComparers.Synthesizers;
 
 public readonly struct SynthesizerType
 {
@@ -62,5 +63,4 @@ public readonly struct SynthesizerType
     }
 
     #endregion
-    
 }

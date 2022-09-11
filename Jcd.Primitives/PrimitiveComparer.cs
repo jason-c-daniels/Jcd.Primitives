@@ -3502,4 +3502,3 @@ public static class PrimitiveComparer
 
     #endregion // [Decimal and UInt64 Comparisons]
 }
-
