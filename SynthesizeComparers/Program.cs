@@ -2,8 +2,8 @@
 
 var (primitiveComparerType, genericComparerType, rootNamespace, abort) = ProcessArgs(args);
 if (abort) return;
-//Generate(rootNamespace, primitiveComparerType, genericComparerType);
-PrimitiveComparerGenerator.Generate(rootNamespace, primitiveComparerType);
+
+PrimitiveComparerGenerator.Generate(rootNamespace, primitiveComparerType, genericComparerType);
 
 GenericPrimitiveComparerGenerator.Generate(rootNamespace, primitiveComparerType);
 
@@ -90,10 +90,3 @@ This tool emits two files compatible with C# 10.
 
     return (primitiveComparerTypeName, genericComparerTypeName, rootNamespaceName, false);
 }
-
-/*
-foreach (var pairing in synthesizablePairings)
-{
-    Console.WriteLine(pairing + $@"; synths: {string.Join(", ", Selector.GetSynthesizers(pairing).Select(s=>s.GetType().Name))}");    
-}
-*/

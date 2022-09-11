@@ -4,6 +4,9 @@ namespace SynthesizeComparers.Synthesizers;
 
 public abstract class ComparisonMethodSynthesizerBase : IComparisonMethodSynthesizer
 {
+    /// <inheritdoc />
+    public abstract SynthesizerType SynthesizerType { get; }
+    
     protected static (Type smallerType, Type largerType) GetSmallerAndLargerType(TypePairing typePairing)
     {
         var (exti1, exti2) = GetExtendedTypeInfo(typePairing);

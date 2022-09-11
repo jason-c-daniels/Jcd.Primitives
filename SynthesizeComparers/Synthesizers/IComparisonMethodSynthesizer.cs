@@ -8,6 +8,11 @@ namespace SynthesizeComparers.Synthesizers;
 public interface IComparisonMethodSynthesizer
 {
     /// <summary>
+    /// Gets the synthesizer type information.
+    /// </summary>
+    public SynthesizerType SynthesizerType { get; }
+    
+    /// <summary>
     /// Returns true if the implementation can synthesize the requested type of method.
     /// </summary>
     /// <param name="typePairing">the pair of types to synthesize the method for.</param>

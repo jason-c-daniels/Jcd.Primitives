@@ -21,7 +21,7 @@ public abstract class DecimalToNondecimalBaseSynthesizer : ComparisonMethodSynth
         if (IsEitherSideBool(typePairing)) return false;
         if (!IsEitherSideDecimal(typePairing)) return false;
         var nondecimalType = GetNondecimalType(typePairing);
-        return (nondecimalType != typeof(double) && nondecimalType != typeof(float)); // prohibit float to decimal and double to decimal to prevent unwanted exceptions.
+        return ( nondecimalType != typeof(double) && nondecimalType != typeof(float)); // prohibit float to decimal and double to decimal to prevent unwanted exceptions.
     }
     
     #endregion

@@ -1,32 +1,51 @@
 ﻿using Jcd.Primitives;
+using SynthesizeComparers.Synthesizers;
 
 namespace SynthesizeComparers.Synthesizers;
 
 public static class Selector
 {
-    public static IReadOnlyList<IComparisonMethodSynthesizer> EqualsSynthesizers = new IComparisonMethodSynthesizer[]
+    public static IReadOnlyList<IComparisonMethodSynthesizer> EqualsImplementationSynthesizers = new IComparisonMethodSynthesizer[]
     {
-        new BooleanToNonbooleanEqualsSynthesizer(),
-        new SameSignedEqualsSynthesizer(),
-        new SignedIntToUnsignedIntEqualsSynthesizer(),
-        new NondecimalFloatingPointEqualsSynthesizer(),
-        new DecimalToNondecimalEqualsSynthesizer()
+        new Implementation.BooleanToNonbooleanEqualsSynthesizer(),
+        new Implementation.SameSignedEqualsSynthesizer(),
+        new Implementation.SignedIntToUnsignedIntEqualsSynthesizer(),
+        new Implementation.NondecimalFloatingPointEqualsSynthesizer(),
+        new Implementation.DecimalToNondecimalEqualsSynthesizer()
     };
     
-    public static IReadOnlyList<IComparisonMethodSynthesizer> CompareSynthesizers = new IComparisonMethodSynthesizer[]
+    public static IReadOnlyList<IComparisonMethodSynthesizer> CompareImplementationSynthesizers = new IComparisonMethodSynthesizer[]
     {
-        new SameSignedCompareSynthesizer(),
-        new SignedIntToUnsignedIntCompareSynthesizer(),
-        new NondecimalFloatingPointCompareSynthesizer(),
-        new DecimalToNondecimalEqualsSynthesizer()
+        new Implementation.SameSignedCompareSynthesizer(),
+        new Implementation.SignedIntToUnsignedIntCompareSynthesizer(),
+        new Implementation.NondecimalFloatingPointCompareSynthesizer(),
+        new Implementation.DecimalToNondecimalCompareSynthesizer()
     };
 
-    public static IEnumerable<IComparisonMethodSynthesizer> GetSynthesizers(TypePairing typePairing)
-        =>  (from eq in EqualsSynthesizers
+    public static IReadOnlyList<IComparisonMethodSynthesizer> EqualsTestSynthesizers = new IComparisonMethodSynthesizer[]
+    {
+        new Test.BooleanToNonbooleanEqualsTestSynthesizer(),
+        new Test.SameSignedEqualsTestSynthesizer(),
+        new Test.SignedIntToUnsignedIntEqualsTestSynthesizer(),
+        new Test.NondecimalFloatingPointEqualsTestSynthesizer(),
+        new Test.DecimalToNondecimalEqualsTestSynthesizer()
+    };
+    
+    public static IReadOnlyList<IComparisonMethodSynthesizer> CompareTestSynthesizers = new IComparisonMethodSynthesizer[]
+    {
+        new Test.SameSignedCompareTestSynthesizer(),
+        new Test.SignedIntToUnsignedIntCompareTestSynthesizer(),
+        new Test.NondecimalFloatingPointCompareTestSynthesizer(),
+        new Test.DecimalToNondecimalCompareTestSynthesizer()
+    };
+    
+    
+    public static IEnumerable<IComparisonMethodSynthesizer> GetImplementationSynthesizers(TypePairing typePairing)
+        =>  (from eq in EqualsImplementationSynthesizers
                 where eq.CanSynthesize(typePairing)
                 select eq
                 )
-           .Union(from cmp in CompareSynthesizers
+           .Union(from cmp in CompareImplementationSynthesizers
                where cmp.CanSynthesize(typePairing)
                select cmp
                );

@@ -7,6 +7,7 @@ Provides TODO: A description of what this namespace provides.
 | Classes | |
 | :--- | :--- |
 | [ExtendedTypeInfo](Jcd.Primitives.ExtendedTypeInfo.md 'Jcd.Primitives.ExtendedTypeInfo') | Contains some additional, sometimes sought after metadata about types. |
+| [PrimitiveComparer](Jcd.Primitives.PrimitiveComparer.md 'Jcd.Primitives.PrimitiveComparer') | A primitive type comparer. Intended for use with GenericPrimitiveTypeComparer. |
 | [PrimitiveTypes](Jcd.Primitives.PrimitiveTypes.md 'Jcd.Primitives.PrimitiveTypes') | A helper class that provides some niche use case<br/>properties for primitive numeric types and boolean. |
 | [TypeExtensions](Jcd.Primitives.TypeExtensions.md 'Jcd.Primitives.TypeExtensions') | A set of extension methods for Type that people seem to keep asking<br/>about/for on StackOverflow. |
 

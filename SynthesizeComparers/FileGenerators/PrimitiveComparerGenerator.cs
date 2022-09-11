@@ -5,14 +5,20 @@ namespace SynthesizeComparers.FileGenerators;
 
 public static class PrimitiveComparerGenerator
 {
-    public static void Generate(string rootNamespace, string primitiveComparerTypeName)
+    public static void Generate(string rootNamespace, string primitiveComparerTypeName, string genericPrimitiveComparerTypeName)
     {
         var sb = new StringBuilder();
         sb.AppendLine($"using System;");
+        sb.AppendLine("// ReSharper disable CompareOfFloatsByEqualityOperator");
+        sb.AppendLine("// ReSharper disable RedundantCast");
         sb.AppendLine("");
         sb.AppendLine($"namespace {rootNamespace};");
-        sb.AppendLine("");
-        sb.AppendLine($"public static class {primitiveComparerTypeName}");
+        sb.AppendLine(@$"
+
+/// <summary>
+/// A primitive type comparer. Intended for use with {genericPrimitiveComparerTypeName}.
+/// </summary>
+public static class {primitiveComparerTypeName}");
         sb.AppendLine("{");
         var count = Selector.AllSynthesizablePairings.Count;
         for (var index = 0; index < count; index++)
@@ -21,7 +27,7 @@ public static class PrimitiveComparerGenerator
             var regionName = $"[{pairing.First.Name} and {pairing.Second.Name} Comparisons]";
             sb.AppendLine($"    #region {regionName}");
             sb.AppendLine($"");
-            foreach (var synth in Selector.GetSynthesizers(pairing))
+            foreach (var synth in Selector.GetImplementationSynthesizers(pairing))
             {
                 sb.AppendLine(synth.Synthesize(pairing));
             }

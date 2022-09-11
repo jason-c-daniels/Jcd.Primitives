@@ -12,6 +12,7 @@ public abstract class SignedIntToUnsignedIntBaseSynthesizer : ComparisonMethodSy
         if (typePairing.AreSameType) return false;
         if (IsEitherSideBool(typePairing)) return false;
         if (IsEitherSideFloatingPoint(typePairing)) return false;
+        if (IsEitherSideDecimal(typePairing)) return false;
         var(exti1, exti2) = GetExtendedTypeInfo(typePairing);
         return exti1.IsSigned != exti2.IsSigned; // same signed is handled by another synthesizer.
     }
